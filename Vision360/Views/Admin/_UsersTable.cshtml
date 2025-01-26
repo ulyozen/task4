@@ -1,0 +1,19 @@
+@model PaginatedViewModel<AdminViewModel>
+
+@foreach (var user in Model.Data)
+{
+    <tr>
+        <td><input type="checkbox" class="row-checkbox" value="@user.Id"></td>
+        <td class="@(!user.Status ? "block" : "")">@user.Name</td>
+        <td class="@(!user.Status ? "block" : "")">@user.Email</td>
+        <td class="@(!user.Status ? "block" : "")">
+            <span
+                class="cursor"
+                data-bs-toggle="tooltip"
+                data-bs-placement="top"
+                title="@user.LastLogin?.ToString("F")">
+                @user.LastLoginRelative
+            </span>
+        </td>
+    </tr>
+}

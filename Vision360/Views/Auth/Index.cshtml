@@ -1,0 +1,83 @@
+﻿@model AuthViewModel
+
+@{
+    Layout = "_AuthLayout";
+    ViewData["Title"] = Model.IsRegistration ? "Registration" : "Login";
+}
+
+<div class="d-flex flex-column justify-content-between vh-100">
+    <a href="/">
+        <img class="logo" src="~/images/logos/Vision.svg" alt="logo">
+    </a>
+
+    <main class=" d-flex flex-column align-items-center">
+        <div class="mw-410 w-100">
+            <div class="mb-5 d-flex flex-column">
+                @{
+                    var html = Model.IsRegistration
+                        ? "<h1 class=\"fw-bold\">Join us today!</h1>"
+                        : "<h1 class=\"fw-bold\">Welcome back</h1>";
+                }
+                @Html.Raw(html)                
+            </div>
+
+            @{
+                var actionName = Model.IsRegistration ? "Register" : "Login";
+            }
+            <form asp-action="@actionName" asp-controller="Auth" method="POST">
+                @if (Model.IsRegistration)
+                {
+                    <div class="mb-4">
+                        <label class="form-label fw-bold" asp-for="Name">Name</label>
+                        <input class="form-control bg-input" asp-for="Name" placeholder="Enter your name"/>
+                        <span class="text-danger" asp-validation-for="Name"></span>
+                    </div>
+                }
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold" asp-for="Email">Email</label>
+                    <input class="form-control bg-input" asp-for="Email" placeholder="Enter your email"/>
+                    <span class="text-danger" asp-validation-for="Email"></span>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label fw-bold" asp-for="Password">Password</label>
+                    <input class="form-control bg-input" type="password" asp-for="Password" placeholder="Enter your password"/>
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+
+                @if (!Model.IsRegistration)
+                {
+                    <div class="mb-4 d-flex justify-content-between">
+                        <div class="form-check">
+                            <input class="form-check-input check-input" asp-for="RememberMe"/>
+                            <label class="form-check-label fw-bold" asp-for="RememberMe">Remember me</label>
+                        </div>
+
+                        <a class="i-link" asp-action="Error">Forgot password</a>
+                    </div>
+                }
+
+                <button class="btn-height mb-5 btn btn-dark w-100">
+                    @{
+                        var buttonText = Model.IsRegistration ? "Sign Up" : "Sign In";
+                    }
+                    @buttonText
+                </button>
+            </form>
+        </div>
+        
+        <div class="row-6">
+            @if (Model.IsRegistration)
+            {
+                <span>Already have an account? <a class="i-link" asp-action="Login">Sign In</a></span>
+            }
+            else
+            {
+                <span>Don't have an account? <a class="i-link" asp-action="Register">Sign Up</a></span>
+            }
+        </div>
+    </main>
+
+    <div class="row-6 copyright">&copy; .NET Internship - 2025. Created by ulyozen.</div>
+</div>

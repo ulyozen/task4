@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'San Francisco';
+  src: url('../fonts/SFPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'San Francisco';
+  src: url('../fonts/SFPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'San Francisco', Arial, sans-serif;
+  /*background-color: #F1F0EA;*/
+}
+
+.bg-input {
+  /*background-color: #F1F0EA;*/
+  border: 1px solid #606060;
+  border-radius: 2px;
+  height: 50px;
+}
+
+.bg-input:focus {
+  /*background-color: #F1F0EA;*/
+  outline: none;
+  box-shadow: 0 0 0 2px #515151;
+  border: 1px solid #a1a1a1;
+}
+
+.bcg-img {
+  background: url("../images/backgrounds/BG.svg") no-repeat left center;
+  background-size: cover;
+  width: 600px;
+  height: auto;
+}
+
+.copyright {
+  padding-bottom: 40px;
+  padding-left: 20px;
+  color: #808080;
+}
+
+.logo {
+  padding-top: 40px;
+  padding-left: 20px;
+  width: 160px;
+  height: auto;
+}
+
+.mw-410 {
+  max-width: 410px;
+}
+
+.fw-bold {
+  font-weight: bold;
+}
+
+.i-link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.btn-height {
+  height: 50px;
+}
+
+.mw-800 {
+  max-width: 800px;
+  width: 100%;
+}
+
+.toggle-bcg {
+  padding: 10px;
+  max-height: 55px;
+  height: 100%;
+  background-color: #f1f1f1;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 5px;
+  gap: 10px;
+}
+
+.btn-text {
+  height: 37px;
+  padding: 0 8px;
+}
+
+.btn-icon {
+  width: 37px;
+  height: 37px;
+}
+
+.icon-toggle {
+  width: 20px;
+  height: 20px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.styled-link {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.block {
+  color: #959595 !important;
+  text-decoration: line-through;
+}
