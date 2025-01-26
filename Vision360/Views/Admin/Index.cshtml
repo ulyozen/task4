@@ -30,7 +30,7 @@
         <tr>
             <th><input type="checkbox" id="selectAll"></th>
             <th>
-                <a class="styled-link" href="?page=@(Model.CurrentPage - 1)&size=@Model.PageSize&sortColumn=Name&sortDirection=@(Model.SortColumn == "Name" && Model.SortDirection == "asc" ? "desc" : "asc")&size=@Model.PageSize&search=@Model.SearchQuery">
+                <a class="styled-link" href="?page=@(Model.CurrentPage > 1 ? Model.CurrentPage - 1 : 1)&size=@Model.PageSize&sortColumn=Name&sortDirection=@(Model.SortColumn == "Name" && Model.SortDirection == "asc" ? "desc" : "asc")&size=@Model.PageSize&search=@Model.SearchQuery">
                     Name
                     @if (Model.SortColumn == "Name")
                     {
@@ -39,7 +39,7 @@
                 </a>
             </th>
             <th>
-                <a class="styled-link" href="?page=@(Model.CurrentPage - 1)&size=@Model.PageSize&sortColumn=Email&sortDirection=@(Model.SortColumn == "Email" && Model.SortDirection == "asc" ? "desc" : "asc")&size=@Model.PageSize&search=@Model.SearchQuery">
+                <a class="styled-link" href="?page=@(Model.CurrentPage > 1 ? Model.CurrentPage - 1 : 1)&size=@Model.PageSize&sortColumn=Email&sortDirection=@(Model.SortColumn == "Email" && Model.SortDirection == "asc" ? "desc" : "asc")&size=@Model.PageSize&search=@Model.SearchQuery">
                     Email
                     @if (Model.SortColumn == "Email")
                     {
@@ -48,7 +48,7 @@
                 </a>
             </th>
             <th>
-                <a class="styled-link" href="?page=@(Model.CurrentPage - 1)&size=@Model.PageSize&sortColumn=LastSeen&sortDirection=@(Model.SortColumn == "LastSeen" && Model.SortDirection == "asc" ? "desc" : "asc")&size=@Model.PageSize&search=@Model.SearchQuery">
+                <a class="styled-link" href="?page=@(Model.CurrentPage > 1 ? Model.CurrentPage - 1 : 1)&size=@Model.PageSize&sortColumn=LastSeen&sortDirection=@(Model.SortColumn == "LastSeen" && Model.SortDirection == "asc" ? "desc" : "asc")&size=@Model.PageSize&search=@Model.SearchQuery">
                     Last Seen
                     @if (Model.SortColumn == "LastSeen")
                     {

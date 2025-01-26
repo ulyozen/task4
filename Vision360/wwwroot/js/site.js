@@ -109,5 +109,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+blockButton.addEventListener('mouseover', () => {
+    document.getElementById('lock').src = '/images/icons/lock-fill-white.svg';
+});
+
+blockButton.addEventListener('mouseout', () => {
+    document.getElementById('lock').src = '/images/icons/lock-fill-blue.svg';
+});
+
+unblockButton.addEventListener('mouseover', () => {
+    document.getElementById('unlock').src = '/images/icons/unlock-fill-white.svg';
+});
+
+unblockButton.addEventListener('mouseout', () => {
+    document.getElementById('unlock').src = '/images/icons/unlock-fill-blue.svg';
+});
+
+deleteButton.addEventListener('mouseover', () => {
+    document.getElementById('trash').src = '/images/icons/trash-white.svg';
+});
+
+deleteButton.addEventListener('mouseout', () => {
+    document.getElementById('trash').src = '/images/icons/trash-red.svg'; // Синяя иконка
+});
 
 

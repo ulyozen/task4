@@ -12,7 +12,7 @@ using Vision360.Context;
 namespace Vision360.Context.Migrations
 {
     [DbContext(typeof(VisionDbContext))]
-    [Migration("20250124221657_Initial")]
+    [Migration("20250126164245_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -184,6 +184,10 @@ namespace Vision360.Context.Migrations
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)

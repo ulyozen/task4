@@ -20,7 +20,7 @@ public class BlockedUserMiddleware : IMiddleware
         if (isAuthenticated)
         {
             var user = await _userManager.GetUserAsync(context.User);
-            if (user != null && user.LockoutEnd > DateTimeOffset.UtcNow)
+            if (user == null || (user.LockoutEnd > DateTimeOffset.UtcNow))
             {
                 await _signInManager.SignOutAsync();
 

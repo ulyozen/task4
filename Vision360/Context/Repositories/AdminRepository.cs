@@ -7,7 +7,7 @@ using Vision360.Context.Repositories.Interfaces;
 
 namespace Vision360.Context.Repositories;
 
-public class AdminRepository(UserManager<User> userManager) : IAdminRepository
+public class AdminRepository(UserManager<User> userManager, SignInManager<User> signInManager) : IAdminRepository
 {
     public async Task<IEnumerable<User>> GetUsersAsync(string search, string sortColumn, string sortDirection)
     {
